@@ -22,7 +22,7 @@ Most of us are familiar with the common HTTP response status codes: 200 OK, 301 
 
 When we think of HTTP response status codes we take it for granted that the server received the request from the client and subsequently, that the response from the server made it back to the client. But what happens when the client doesn't hear back from the server in a timely fashion, or perhaps the client aborts a request that is no longer needed? We'll refer to these scenarios as fragmented HTTP request and response pairs or 'fragmented pairs' for short.
 
-![Normal HTTP Request and Response Pair | Fragmented Pair](screenshots/http_request_response.png)
+![Normal HTTP Request and Response Pair | Fragmented Pair](/assets/2023-03-04/http_request_response.png)
 
 ### Fragmented Pairs - Undefined response and aborted requests
 The fragmented pair scenarios can be grouped into two broad categories. The first category encompasses circumstances like network partition, back-end service disruption, a busy server, the intern tripping over the power cable, fun stuff like that. In these circumstances the client has no way of knowing if the server was able to send a response, and if so, did the response get lost on the way to the client. In other words, the client can't tell the difference between the server crashing (no response was ever sent) and the server responded but the response was lost due to a network issue. From the client's perspective the response is **undefined**.
@@ -140,23 +140,23 @@ The front-end is written in vanilla javascript and HTML. The back-end is a bareb
 
 To see the demo in action build and run the app, open a browser, then visit http://localhost:5000/. You should see the interface pictured below. Click the buttons, wait a few seconds, then visit the logs pane of your Application Insights instance on the Azure portal.
 
-![Demo user interface](screenshots/ui.png)
+![Demo user interface](/assets/2023-03-04/ui.png)
 
 #### 1. Successful request
 
 We'll start out with a simple successful request that does not require enrichment. I included this scenario for two reasons. First, as a sanity check that validates we've wired everything together properly. Second, to give us a point of reference for comparing successful request against aborted and undefined responses when reviewing the Application Insights logs.
 
-![successful request and response](screenshots/Successful_request_response.png)
+![successful request and response](/assets/2023-03-04/Successful_request_response.png)
 
 #### 2. Aborted request
 The aborted request scenario is where you will realize the benefits of this solution. When the telemetry record is enriched the will find a property named aborted under the customDimensions field of the dependencies table. If you chose to set a custom HTTP response code you will also see it reflected in the dependency table under the resultCode field.
 
-![aborted request](screenshots/aborted_request.png)
+![aborted request](/assets/2023-03-04/aborted_request.png)
 
 #### 3. Undefined response
 Our last scenario is an undefined response. To simulate this scenario we will cause the server to abort the TCP connection. We typically don't want to abort a TCP connection on the server but it's a reliable way to induce an undefined response for the purposes of this demo. In this case the client has no idea why it didn't receive a response. All the client can do here is enrich the telemetry record by setting the aborted property to false and keeping the result code as 0. The combination of the aborted property being set to false and a result code of 0 signals to the monitoring solution that the response failed or was otherwise lost to the ether by no fault of the client. Knowing that the client didn't deliberately abort the request is valuable when troubleshooting failures.
 
-![undefined response](screenshots/undefined_response.png)
+![undefined response](/assets/2023-03-04/undefined_response.png)
 
 ## Parting thoughts
 
