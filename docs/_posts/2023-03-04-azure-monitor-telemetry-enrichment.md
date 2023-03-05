@@ -4,6 +4,7 @@ title: "Making Azure Monitor even more insightful with telemetry enrichment"
 date: 2023-03-04
 categories: blog azure
 tags: tutorials
+description: A case study on using telemetry enrichment for Azure Monitor
 ---
 
 # Making Azure Monitor even more insightful with telemetry enrichment
@@ -139,7 +140,7 @@ The sample code assumes you've already provision an [Application Insights](https
 
 The front-end is written in vanilla javascript and HTML. The back-end is a barebones web server written in C#. If you need guidance on how to build an run a .Net app this [tutorial](https://dotnet.microsoft.com/en-us/learn/dotnet/hello-world-tutorial/intro) has you covered.
 
-To see the demo in action build and run the app, open a browser, then visit http://localhost:5000/. You should see the interface pictured below. Click the buttons, wait a few seconds, then visit the logs pane of your Application Insights instance on the Azure portal.
+To see the demo in action build and run the app, open a browser, then visit `http://localhost:5000/`. You should see the interface pictured below. Click the buttons, wait a few seconds, then visit the logs pane of your Application Insights instance on the Azure portal.
 
 ![Demo user interface](/assets/2023-03-04/ui.png)
 
