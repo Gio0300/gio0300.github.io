@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: default
 title: "Making Azure Monitor even more insightful with telemetry enrichment"
 date: 2023-03-04
 categories: blog azure
+tags: tutorials
 ---
 
 # Making Azure Monitor even more insightful with telemetry enrichment
