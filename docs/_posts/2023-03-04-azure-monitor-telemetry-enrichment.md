@@ -23,7 +23,7 @@ Most of us are familiar with the common HTTP response status codes: 200 OK, 301 
 
 When we think of HTTP response status codes we take it for granted that the server received the request from the client and subsequently, that the response from the server made it back to the client. But what happens when the client doesn't hear back from the server in a timely fashion, or perhaps the client aborts a request that is no longer needed? We'll refer to these scenarios as fragmented HTTP request and response pairs or 'fragmented pairs' for short.
 
-![Normal HTTP Request and Response Pair | Fragmented Pair](/assets/2023-03-04/http_request_response.png)
+![Normal HTTP Request and Response Pair \| Fragmented Pair](/assets/2023-03-04/http_request_response.png)
 
 ### Fragmented Pairs - Undefined response and aborted requests
 The fragmented pair scenarios can be grouped into two broad categories. The first category encompasses circumstances like network partition, back-end service disruption, a busy server, the intern tripping over the power cable, fun stuff like that. In these circumstances the client has no way of knowing if the server was able to send a response, and if so, did the response get lost on the way to the client. In other words, the client can't tell the difference between the server crashing (no response was ever sent) and the server responded but the response was lost due to a network issue. From the client's perspective the response is **undefined**.
