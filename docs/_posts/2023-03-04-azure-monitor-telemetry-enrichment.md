@@ -1,12 +1,11 @@
 ---
-layout: default
-title: "Making Azure Monitor even more insightful with telemetry enrichment"
+layout: post
+title: Making Azure Monitor even more insightful with telemetry enrichment
+subtitle: A case study on using telemetry enrichment for Azure Monitor
 date: 2023-03-04
 tags: azure monitor web
-description: A case study on using telemetry enrichment for Azure Monitor
 ---
 
-# Making Azure Monitor even more insightful with telemetry enrichment
 Azure Monitor offers a tremendous amount of observability with minimal configuration. The Azure Monitor Agent and Application Insights SDKs truly do a wonderful job straight out of the box. However, they cannot account for every possible scenario. Some times we need more context-specific information for a crucial insight. This is where telemetry enrichment comes into play. In this article we will explore a real world scenario where we used telemetry enrichment to provide that necessary insight.
 
 Let me provide some context before we go further. Our application is a single page web app supported by a BFF (backend for frontend), both of which are instrumented with the Application Insights SDK for their respective platform. 
