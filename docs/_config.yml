@@ -1,5 +1,5 @@
 remote_theme: pages-themes/slate@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
-title: using the slate theme
-description: Gio's blog
+title: Gio's Blog
+description: Hello and welcome to my blog. I hope you'll find the articles interesting or at the very least informative.
