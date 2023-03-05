@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-Hello and welcome to my blog. My name is Gio, I'm a professional computer geek and this is my blog. I hope you'll find the articles interesting or at the very least informative.
+<h2>Hello and welcome to my blog. My name is Gio, I'm a professional computer geek and this is my blog. I hope you'll find the articles interesting or at the very least informative.</h2>
 
 {% for post in site.posts %}
   <article>
@@ -11,6 +11,20 @@ Hello and welcome to my blog. My name is Gio, I'm a professional computer geek a
       </a>
     </h2>
     <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date_to_long_string }}</time>
-    {{ post.description }}
+    <p>{{ post.excerpt }}</p>
+
+    {% if site.feed_show_tags != false and post.tags.size > 0 %}
+      <div class="blog-tags">
+        <span>Tags:</span>
+        <!-- role="list" needed so that `list-style: none` in Safari doesn't remove the list semantics -->
+        <ul class="d-inline list-inline" role="list">
+          {% for tag in post.tags %}
+          <li class="list-inline-item">
+            <a href="{{ '/tags' | absolute_url }}#{{- tag -}}">{{- tag -}}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
   </article>
 {% endfor %}

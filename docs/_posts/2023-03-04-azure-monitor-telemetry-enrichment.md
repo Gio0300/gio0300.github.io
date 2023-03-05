@@ -2,8 +2,7 @@
 layout: default
 title: "Making Azure Monitor even more insightful with telemetry enrichment"
 date: 2023-03-04
-categories: blog azure
-tags: tutorials
+tags: azure monitor web
 description: A case study on using telemetry enrichment for Azure Monitor
 ---
 
@@ -134,9 +133,11 @@ Things to note about the code above:
 Our work here is done. The Application Insights SDK will call the callbacks and take care of pushing the enriched telemetry record to the collection endpoint. Now when we look at the Application Insights dashboards we no longer see a bunch of failed client dependencies. The dashboards reflect a true representation of the facts.
 
 ### Free Samples
-As part of this article I've included some sample code because I'm pretty sure the internet would break if I didn't include some code samples. The samples are designed to illustrate three key scenarios: a successful request, an aborted request, and an undefined response. The three scenarios are implemented using the XMLHttpRequest API and the fetch API for a grand total of 6 samples. I encourage you to check them out.
+As part of this article I've included some sample code because I'm pretty sure the internet would break if I didn't include some code samples. The samples are designed to illustrate three key scenarios: a successful request, an aborted request, and an undefined response. The three scenarios are implemented using the XMLHttpRequest API and the fetch API for a grand total of 6 samples. I encourage you to check them out. 
 
-The sample code assumes you've already provision an [Application Insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview?) instance. You will need to provide your own connection. Take a look at the index.html page in the provided source code where you will find a spot to enter your connection string ([snippet-based setup](https://learn.microsoft.com/en-us/azure/azure-monitor/app/javascript?tabs=snippet#add-the-javascript-sdk)) and a simple user interface for the samples.
+> You'll find the sample code [here](https://github.com/Gio0300/app-insights-enrichment).
+
+I assume you've already provision an [Application Insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview?) instance. You will need to provide your own connection. Take a look at the index.html page in the provided source code where you will find a spot to enter your connection string ([snippet-based setup](https://learn.microsoft.com/en-us/azure/azure-monitor/app/javascript?tabs=snippet#add-the-javascript-sdk)) and a simple user interface for the samples.
 
 The front-end is written in vanilla javascript and HTML. The back-end is a barebones web server written in C#. If you need guidance on how to build an run a .Net app this [tutorial](https://dotnet.microsoft.com/en-us/learn/dotnet/hello-world-tutorial/intro) has you covered.
 
