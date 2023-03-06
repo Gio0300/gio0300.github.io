@@ -1,8 +1,6 @@
 ---
 layout: default
 ---
-<h1 class="dashed_underline">Articles</h1>
-
 {% for post in site.posts %}
   <article>
       

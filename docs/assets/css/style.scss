@@ -3,6 +3,10 @@
 
 @import "{{ site.theme }}";
 
+a {
+	color: #373737;
+}
+
 a:hover {
     text-decoration: none;
 	color: #717171;
