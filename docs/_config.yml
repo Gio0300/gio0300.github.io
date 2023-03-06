@@ -3,3 +3,4 @@ plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 title: Gio's Blog
 description: Hello and welcome to my blog. I hope you'll find the articles interesting or at the very least informative.
+date-format: "%B %-d, %Y"
