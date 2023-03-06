@@ -5,10 +5,10 @@ layout: default
 
 {% for post in site.posts %}
   <article>
-      <a href="{{ post.url }}">
-        <h2 class="post-title">{{ post.title }}</h2>
-        <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-      </a>
+      
+    <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+    <h3 class="post-subtitle"><a href="{{ post.url }}">{{ post.subtitle }}</a></h3>
+      
     <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date_to_long_string }}</time>
     <p>{{ post.excerpt }}</p>
 
