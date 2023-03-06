@@ -5,8 +5,14 @@
 
 a:hover {
     text-decoration: none;
+	color: #717171;
 }
 
 h2 {
     background-image: none
+}
+
+
+.dashed_underline {
+    background: url("../images/bg_hr.png") repeat-x bottom;
 }
