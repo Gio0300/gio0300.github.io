@@ -16,3 +16,21 @@ a:hover {
 .dashed_underline {
     background: url("../images/bg_hr.png") repeat-x bottom;
 }
+
+.d-inline {
+    display: inline!important;
+}
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+}
+
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+}
+
+li {
+    display: inline;
+    padding: 6px;
+}
