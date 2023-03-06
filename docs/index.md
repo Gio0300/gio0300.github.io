@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<h2>Hi, my name is Gio, I'm a professional computer geek and this is my blog.</h2>
+<h2>Articles</h2>
 
 {% for post in site.posts %}
   <article>
