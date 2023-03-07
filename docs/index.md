@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+{% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+
 {% for post in site.posts %}
   <article>
     <a href="{{ post.url }}">
@@ -18,7 +20,8 @@ layout: default
         <ul class="d-inline list-inline" role="list">
           {% for tag in post.tags %}
           <li class="list-inline-item">
-            <a href="{{ '/tags' | absolute_url }}#{{- tag -}}">{{- tag -}}</a>
+            <!-- <a href="{{ '/tags' | absolute_url }}#{{- tag -}}">{{- tag -}}</a> -->
+            {{- tag -}}">
           </li>
           {% endfor %}
         </ul>

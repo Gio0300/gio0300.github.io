@@ -140,7 +140,7 @@ Our work here is done. The Application Insights SDK will call the callbacks and 
 ### Free Samples
 As part of this article I've included some sample code because I'm pretty sure the internet would break if I didn't include some code samples. The samples are designed to illustrate three key scenarios: a successful request, an aborted request, and an undefined response. The three scenarios are implemented using the XMLHttpRequest API and the fetch API for a grand total of 6 samples. I encourage you to check them out. 
 
-> You'll find the sample code https://github.com/Gio0300/app-insights-enrichment.
+> You'll find the sample code [https://github.com/Gio0300/app-insights-enrichment](https://github.com/Gio0300/app-insights-enrichment).
 
 I assume you've already provision an [Application Insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview?) instance. You will need to provide your own connection. Take a look at the index.html page in the provided source code where you will find a spot to enter your connection string ([snippet-based setup](https://learn.microsoft.com/en-us/azure/azure-monitor/app/javascript?tabs=snippet#add-the-javascript-sdk)) and a simple user interface for the samples.
 
