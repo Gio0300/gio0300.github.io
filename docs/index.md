@@ -3,9 +3,10 @@ layout: default
 ---
 {% for post in site.posts %}
   <article>
-      
-    <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-    <h3 class="post-subtitle"><a href="{{ post.url }}">{{ post.subtitle }}</a></h3>
+    <a href="{{ post.url }}">
+      <h2 class="post-title">{{ post.title }}</h2>
+      <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+    </a>
     
     <time datetime="{{ post.date }}">{{ post.date | date: date_format }}</time>
     <p>{{ post.excerpt }}</p>
