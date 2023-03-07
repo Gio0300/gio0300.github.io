@@ -21,7 +21,7 @@ layout: default
           {% for tag in post.tags %}
           <li class="list-inline-item">
             <!-- <a href="{{ '/tags' | absolute_url }}#{{- tag -}}">{{- tag -}}</a> -->
-            {{- tag -}}">
+            {{- tag -}}
           </li>
           {% endfor %}
         </ul>
