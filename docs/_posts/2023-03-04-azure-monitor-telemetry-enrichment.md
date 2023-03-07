@@ -76,7 +76,8 @@ The first and third bullet above are what we need for our solution. Access to th
 
 ```javascript
 sdk.addDependencyListener((dependencyDetails) => {
-	//add a custom function to the dependency context that we can interrogate after the dependency is completed.
+	// Add a custom function to the dependency context that we can interrogate 
+	// after the dependency is completed.
 	dependencyDetails.context.isAborted = () =>
 		if(dependencyDetails.xhr !== undefined){
 			return (dependencyDetails.xhr.ajaxData.aborted == 1);
@@ -101,8 +102,10 @@ The [Dependency Initializer](https://github.com/microsoft/ApplicationInsights-JS
 
 ```javascript
 sdk.addDependencyInitializer((dependencyDetails) => {
-	//bubble up the isAborted function from the dependency callbacks to the telemetry callbacks. Here the item property represents the baseData property of the telemetry envelope (see the Telemetry Initializer)
-	//so we bubble up our custom function so we can execute the function during addTelemetryInitializer.
+	// Bubble up the isAborted function from the dependency callbacks to the telemetry callbacks.
+	// Here the item property represents the baseData property of the 
+	// telemetry envelope (see the Telemetry Initializer) so we bubble up our 
+	// custom function so we can execute the function during addTelemetryInitializer.
 	dependencyDetails.item.isAborted = dependencyDetails.context.isAborted;
 });
 ```
@@ -113,11 +116,14 @@ The [Telemetry Initializer](https://github.com/microsoft/ApplicationInsights-JS#
 ```javascript
 sdk.addTelemetryInitializer((envelope) => {
 	if(envelope.baseData.responseCode == 0 && typeof envelope.baseData.isAborted === 'function'){
-		//enrich the telemetry data with the aborted property
+		// Enrich the telemetry data with the aborted property
 		envelope.data.aborted = envelope.baseData.isAborted();
-		//optionally add your own custom response code to easily distinguish between request aborted by the client and other reasons for why the request failed.
+		// Optionally add your own custom response code to easily distinguish between 
+		// request aborted by the client and other reasons for why the request failed.
 		if(envelope.data.aborted){
-			envelope.baseData.responseCode = 299; //299 is an arbitrary response code. Feel free to chose a response code that better suits your needs.
+			// 299 is an arbitrary response code. Feel free to chose a response 
+			// code that better suits your needs.
+			envelope.baseData.responseCode = 299; 
 			envelope.baseData.success = true;
 		}
 	}

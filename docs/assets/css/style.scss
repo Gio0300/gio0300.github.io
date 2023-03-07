@@ -1,15 +1,12 @@
----
----
-
-@import "{{ site.theme }}";
+--- --- @import "{{ site.theme }}";
 
 a {
-	color: #373737;
+    color: #373737;
 }
 
 a:hover {
     text-decoration: none;
-	color: #717171;
+    color: #717171;
 }
 
 
@@ -18,8 +15,9 @@ a:hover {
 }
 
 .d-inline {
-    display: inline!important;
+    display: inline !important;
 }
+
 .list-inline {
     padding-left: 0;
     list-style: none;
@@ -33,4 +31,8 @@ a:hover {
 li {
     display: inline;
     padding: 6px;
+}
+
+section.inner {
+    max-width: 1024px;
 }
