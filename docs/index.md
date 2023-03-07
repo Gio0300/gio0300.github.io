@@ -6,10 +6,8 @@ layout: default
       
     <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
     <h3 class="post-subtitle"><a href="{{ post.url }}">{{ post.subtitle }}</a></h3>
-      
-
-      date_format = site.date_format
-    <time datetime="{{ post.date }}">{{ post.date }}</time>
+    
+    <time datetime="{{ post.date }}">{{ post.date | date: site.date_format}}</time>
     <p>{{ post.excerpt }}</p>
 
     {% if site.feed_show_tags != false and post.tags.size > 0 %}
